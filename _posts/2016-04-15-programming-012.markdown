@@ -1,0 +1,103 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 2.6 - More Fun with Rationals"
+date:   2016-04-15 15:10:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/012
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/47" target="_blank">Lecture 2.6 - More Fun with Rationals</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Rationals with Data Abstraction (1)</h4>
+
+{% highlight text %}
+class Rational(x: Int, y: Int) {
+  private def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
+  private val g = gcd(x, y)
+  def numer = x / g
+  def denom = y / g
+  ...
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Rationals with Data Abstraction (2)</h4>
+
+{% highlight text %}
+class Rational(x: Int, y: Int) {
+  private def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
+  def numer = x / gcd(x, y)
+  def denom = y / gcd(x, y)
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Data Abstraction</h4>
+	- the ability to choose different implementations of the data without affecting clients <br/>
+	- clients observe exactly the same behavior in each case (Rationals with Data Abstraction (1) & (2)) <br/><br/>
+
+- <h4>Self Reference</h4>
+	- on the inside of a class, the name this represents the object on which the current method is executed <br/>
+	- a simple name x, which refers to another member of the class, is an abbreviation of this.x <br/><br/>
+
+- <h4>Preconditions</h4>
+	- require is a predefined function <br/>
+	- it takes a condition and an optional message string <br/>
+	- if the condition passed to require is false, an IllegalArgumentException is thrown with the given message string <br/>
+
+{% highlight text %}
+class Rational(x: Int, y: Int) {
+  require(y > 0, ”denominator must be positive”)
+  ...
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Assertions</h4>
+	- it takes a condition and an optional message string as parameters <br/>
+	- a failing assert will also throw an AssertionError <br/>
+
+{% highlight text %}
+val x = sqrt(y)
+assert(x >= 0)
+{% endhighlight %}
+<br/>
+
+- <h4>Preconditions vs Assertions</h4>
+	- AssertionError for assert, IllegalArgumentException for require <br/>
+	- require is used to enforce a precondition on the caller of a function <br/>
+	- assert is used as to check the code of the function itself <br/><br/>
+
+- <h4>Constructors</h4>
+	- primary constructor <br/>
+		1) a class implicitly introduces a constructor <br/>
+		2) takes the parameters of the class <br/>
+		3) executes all statements in the class body <br/><br/>
+	- auxiliary constructors <br/>
+
+{% highlight text %}
+class Rational(x: Int, y: Int) {
+  def this(x: Int) = this(x, 1)
+  ...
+}
+
+new Rational(2) > 2/1
+{% endhighlight %}
+
+<br/><br/>
+
+

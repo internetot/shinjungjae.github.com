@@ -1,0 +1,74 @@
+---
+layout: post
+title:  "[LeetCode] Single Number 3 (1)"
+date:   2016-02-20 13:31:00
+categories: algorithm
+author: Rachel Park
+comments: true
+tags: [ps]
+permalink: ps/010
+---
+
+
+<a href='https://leetcode.com/problems/single-number-iii/'>Single Number 3</a>
+<br/><br/>
+
+Given an array of numbers nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once.
+
+For example:
+
+Given nums = [1, 2, 1, 3, 2, 5], return [3, 5].
+
+
+
+<a href='https://github.com/mjpark03/leetcode/blob/master/single-number-3-1.java'>My Solution (Github)</a>
+{% highlight text %}
+public class Solution {
+    public int[] singleNumber(int[] nums) {
+
+        if (nums==null || nums.length==0)
+            return null;
+
+        LinkedList<Integer> singleNumbers = new LinkedList<>();
+        HashMap<Integer, Integer> numberMap = new HashMap<>(nums.length);
+
+        for (int i=0; i<nums.length; i++) {
+            int key = nums[i];
+
+            if (numberMap.containsKey(key)) {
+                int value = (int)numberMap.get(key);
+                numberMap.put(key, value+1);
+            } else {
+                numberMap.put(key, 1);
+            }
+        }
+
+        Set<Integer> keys = numberMap.keySet();
+        for(Integer key : keys) {
+            if (numberMap.get(key).intValue() == 1) {
+                singleNumbers.add(key);
+            }
+        }
+
+        Integer[] singleNumbersArr = singleNumbers.toArray(new Integer[singleNumbers.size()]);
+        int[] result = convertPrimitivesInt(singleNumbersArr);
+
+        return result;
+    }
+
+    public int[] convertPrimitivesInt(Integer[] arr) {
+
+        int[] convertArr = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            convertArr[i] = arr[i].intValue();
+        }
+
+        return convertArr;
+    }
+}
+{% endhighlight %}
+
+<!-- more -->
+
+<br/><br/>
+* Time Complexity: O(n)

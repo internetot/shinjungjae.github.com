@@ -1,0 +1,62 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 4.4 - Variance"
+date:   2016-06-09 23:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/020
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/83" target="_blank">Lecture 4.4 - Variance</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Definition of Variance</h4>
+  - C[T] is a parameterized type <br/>
+  - A, B are types such that  A <: B <br/>
+
+{% highlight text %}
+C[A] <: C[B] // C is covariant
+C[A] >: C[B] // C is contravariant
+neither C[A] nor C[B] is a subtype of the other // C is nonvariant
+
+class C[+A] { ... } // C is covariant
+class C[-A] { ... } // C is contravariant
+class C[A] { ... } // C is nonvariant
+{% endhighlight %}
+<br/>
+
+- <h4>Function Trait Declaration</h4>
+  - functions are contra variant in their argument type(s) and covariant in their result type <br/>
+
+{% highlight text %}
+package scala
+trait Function1[-T, +U] {
+  def apply(x: T): U
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Variance Checks</h4>
+  - Scala compiler will check <br/>
+    - covariant type parameters can only appear in method results <br/>
+    - contravariant type parameters can only appear in method parameters <br/>
+    - invariant type parameters can appear anywhere <br/><br/>
+
+
+
+
+
+
+

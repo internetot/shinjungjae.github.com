@@ -1,0 +1,64 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 1.2 - Elements of Programming"
+date:   2016-04-05 22:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/003
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/3" target="_blank">Lecture 1.2 - Elements of Programming</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Evaluation of A non-primitive expression</h4>
+    1) Take the leftmost operator <br/>
+    2) Evaluate its operands (left before right) <br/>
+    3) Apply the operator to the operands <br/><br/>
+
+- <h4>Evaluation of Function Application</h4>
+    1) Evaluate all function arguments, from left to right <br/>
+    2) Replace the function application by the function’s right-hand side, and, at the same time <br/>
+    3) Replace the formal parameters of the function by the actual arguments <br/><br/>
+
+- <h4>Example (Evaluation of Function Application)</h4>
+{% highlight text %}
+sumOfSquares(3, 2+2)
+sumOfSquares(3, 4)
+square(3) + square(4)
+3 * 3 + square(4)
+9 + square(4)
+9 + 4 * 4
+9 + 16
+25
+{% endhighlight %}
+<br/>
+
+- <h4>The substitution model</h4>
+    - reduce an expression to a value
+    - can be applied to all expressions, as long as they have no side effects
+    - formalized in the lambda-calculus (a foundation for functional programming) <br/><br/>
+
+- <h4>Call-by-name vs Call-by-value</h4>
+    - Call-by-value has the advantage that it evaluates every function argument only once
+    - Call-by-name has the advantage that a function argument is not evaluated if the corresponding parameter is unused in the evaluation of the function body <br/><br/>
+
+<h3>Additional Resources</h3>
+<hr/>
+
+* Lambda calculus <br/>
+    <a href="https://en.wikipedia.org/wiki/Lambda_calculus" target="_blank">https://en.wikipedia.org/wiki/Lambda_calculus</a> <br/>
+
+<br/><br/>
+

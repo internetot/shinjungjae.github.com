@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 2.4 - Scala Syntax Summary"
+date:   2016-04-14 15:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/010
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/41" target="_blank">Lecture 2.4 - Scala Syntax Summary</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Types</h4>
+	- Type = SimpleType, FunctionType <br/>
+	- FunctionType = SimpleType ‘= > ’ Type, ‘( ’ [ Types ] ‘) ’ ‘= > ’ Type <br/>
+	- SimpleType = Ident <br/>
+	- A type can be <br/>
+		1) A numeric type: Int, Double (and Byte, Short, Char, Long, Float) <br/>
+		2) The Boolean type with the values true and false <br/>
+		3) The String type <br/>
+		4) A function type, like Int => Int, (Int, Int) => Int <br/>
+
+- <h4>Expressions</h4>
+	- An expression can be <br/>
+		1) An identifier such as x, isGoodEnough <br/>
+		2) A literal, like 0, 1.0, ”abc” <br/>
+		3) A function application, like sqrt(x) <br/>
+		4) An operator application, like -x, y + x <br/>
+		5) A selection, like math.abs <br/>
+		6) A conditional expression, like if (x < 0) -x else x <br/>
+		7) A block, like { val x = math.abs(y) ; x * 2 } <br/>
+		8) An anonymous function, like x => x + 1 <br/>
+
+- <h4>Definitions</h4>
+	- Def = FunDef, ValDef <br/>
+	- FunDef = def ident { ‘( ’ [ Parameters ] ‘) ’} [ ‘: ’ Type ] ‘= ’ Expr <br/>
+	- ValDef = val ident [ ‘: ’ Type ] ‘= ’ Expr <br/>
+	- Parameter = ident ‘: ’ [ ‘= > ’ ] Type <br/>
+	- Parameters = Parameter { ‘ , ’ Parameter } <br/>
+	- A definition can be <br/>
+		1) A function definition, like def square(x: Int) = x * x <br/>
+		2) A value definition, like val y = square(2) <br/>
+	- A parameter can be <br/>
+		1) A call-by-value parameter, like (x: Int) <br/>
+		2) A call-by-name parameter, like (y: => Double) <br/>
+
+<br/><br/>
+
+

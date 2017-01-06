@@ -1,0 +1,45 @@
+# Site settings
+title: RACHEL'S BLOG
+description: I love programming, communication, book, music and photograph =)
+email: mjpark03@gmail.com
+baseurl: /
+#favicon
+favicon: RACHEL.png
+
+pygments: true
+
+#feed
+feedburner_username: 
+#twitter
+twitter_username: 
+github_username:  mjpark03
+
+#linkedin
+linkedin_username: mjpark03
+
+#google analytics
+#google_analytics_id : UA-53386152-2
+#gplus
+#gplus_username: 101893920934936418705
+
+#fb_username
+fb_username: mjspring03
+
+#permalink /blog/2014/11/11/this-is-a-sample-post
+permalink: /blog/:year/:month/:day/:title
+# Build settings
+markdown: kramdown
+
+#Disqus configuration
+#disqus_short_name: maangalabscom
+#disqus_show_comment_count: true
+
+#Can be used for multiple author blogs ! Add name to post For more visit the sample
+# authors:
+#   pranavrajs:
+#     display_name: Pranav Raj S
+#     email: pranavrajs@gmail.com
+#     fb: pranav.tayberrycreative
+#     linkedin: pranavrajs
+#     twitter: pranavrajs
+#     github: pranavrajs

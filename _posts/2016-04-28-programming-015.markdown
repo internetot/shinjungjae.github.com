@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 3.2 - How Classes are Organized"
+date:   2016-04-28 18:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/015
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/53" target="_blank">Lecture 3.2 - How Classes are Organized</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Packages</h4>
+	- Classes and objects are organized in packages <br/><br/>
+
+- <h4>Forms of Imports</h4>
+	- named import <br/>
+  - wildcard import <br/>
+
+{% highlight text %}
+import week3.Rational           // imports just Rational
+import week3.{Rational, Hello}  // imports both Rational and Hello
+import week3._                  // imports everything in package week3
+{% endhighlight %}
+<br/>
+
+- <h4>Scaladoc</h4>
+  - Scala library : <a href='http://www.scala-lang.org/files/archive/api/current/#package' target='_blank'>http://www.scala-lang.org/files/archive/api/current/#package</a> <br/><br/>
+
+- <h4>Traits</h4>
+	- a class has several natural supertypes <br/>
+	- trait is declared like an abstract class <br/>
+  - traits resemble interfaces in Java, but are more powerful <br/>
+    - can contains fields and concrete methods <br/><br/>
+
+
+{% highlight text %}
+trait Planar {
+  def height: Int
+  def width: Int
+  def surface = height * width
+}
+{% endhighlight %}
+
+{% highlight text %}
+class Square extends Shape with Planar with Movable ...
+{% endhighlight %}
+<br/>
+
+- <h4>Scala’s Class Hierarchy</h4>
+
+<img style="margin-left:auto;margin-right:auto;" src="../../images/programming/programming-015-01.png" width="60%"/>
+<br/><br/>
+
+- <h4>The Nothing Type</h4>
+  - at the bottom of Scala’s type hierarchy <br/>
+  - no value of type Nothing <br/>
+  - why is that useful? <br/>
+    - to signal abnormal termination <br/>
+    - as an element type of empty collections <br/><br/>
+
+- <h4>Exceptions</h4>
+  - similar to Java’s <br/>
+  - abort evaluation with the exception Exc <br/><br/>
+
+- <h4>The Null Type</h4>
+  - the type of null is Null <br/>
+
+{% highlight text %}
+val x = null           // x: Null
+val y: String = null   // y: String
+val z: Int = null      // error: type mismatch
+{% endhighlight %}
+<br/><br/>
+
+

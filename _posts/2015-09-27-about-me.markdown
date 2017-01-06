@@ -1,0 +1,186 @@
+---
+layout: post
+title:  "ABOUT ME"
+date:   2015-09-27 16:16:00
+categories: about
+author: Rachel Park
+comments: true
+tags: [about]
+permalink: about/me
+---
+
+
+<br/>
+<img style="margin-left:auto;margin-right:auto;" src="../../images/about/me.jpg" width="60%"/>
+<br/>
+
+I am <b>SW Engineer</b> in Korea. I am interested in many topics. <b>Programming, Community for engineers, Book, Music and Photograph :)</b>
+
+<!-- more -->
+
+<!-- Education -->
+<h2><b>Education</b></h2>
+
+<h4>Korea University</h4>
+<li>Master in Embedded SW, 2015</li>
+<br/>
+
+<!-- Experience (Work) -->
+<h2><b>Experience (Work)</b></h2>
+
+<li><h4>I/O inc<span id='about-date'>&nbsp;&nbsp; Apr, 2016 - Present</span></h4></li>
+<b>A Software Engineer</b> of I/O inc that provides IoT products.
+
+1st project. Developing back-end for mobile clients of Switcher <br/>
+I am developing back-end for mobile clients of Switcher. <br/>
+Switcher is IoT product. If you use Switcher, you can easily turn off the lights. <br/>
+I used some skills such as node.js, express.js, bootstrap, mongoDB, MySQL, AngularJS, AWS, etc.. <br/>
+URL: https://www.switcher.kr/
+<br/><br/>
+
+<li><h4>ScaleChain<span id='about-date'>&nbsp;&nbsp; Mar, 2016 - Present</span></h4></li>
+<b>A Software Engineer</b> of ScaleChain that provides a distributed private & public blockchain.
+
+1st project. Developing back-end for the wallet of blockchain <br/>
+I am developing back-end for the wallet of blockchain. <br/>
+blockchain is a distributed database that maintains a continuously-growing list of transaction records hardened against tampering and revision. <br/>
+The wallet is a client software used to manage private keys and to make transactions on the Bitcoin network. <br/>
+I used some skills such as Scala, Java, RocksDB, Akka, etc.. <br/>
+GitHub URL: https://github.com/ScaleChain/scalechain <br/>
+URL: https://scalechain.io/ <br/>
+
+2nd project. Developing private certificate with blockchain <br/>
+I am developing front-end & back-end for private certificate with blockchain. <br/>
+The private certificate can provide secure authentication process using blockchain. <br/>
+I used some skills such as node.js, express.js, bootstrap, mongoDB, etc..
+<br/><br/>
+
+<li><h4>Coupang<span id='about-date'>&nbsp;&nbsp; Dec, 2015 - Feb, 2016</span></h4></li>
+<b>A Software Engineer</b>
+
+I worked at QC(Quality Control)&Monitoring Team. <br/>
+We are responsible for Product Quality Control, Post-Monitoring System, Approval Attribute Tool and Credibility Management Portal. <br/>
+
+1st project. Developing back-end & front-end for CMCenter of Coupang <br/>
+I developed back-end & front-end for CMCenter of Coupang. CMCenter is Credibility Management Portal for products of Coupang. <br/>
+I used some skills such as Java, javascript, MySQL, Spring Framework, JPA, etc.. <br/>
+URL: http://www.coupang.com/np/safety
+<br/><br/>
+
+<li><h4>Freelancer<span id='about-date'>&nbsp;&nbsp; Aug, 2015 - Nov, 2015</span></h4></li>
+<b>A Software Developer</b> as Freelancer.
+
+1st project. Developing back-end & front-end for U Cube <br/>
+I developed back-end & front-end for U Cube. U Cube is IT System for LG U+ (Telecommunications Company).  
+I used some skills such as Java, javascript, Oracle, Spring Framework, etc..
+<br/><br/>
+
+<li><h4>GYMGAGE<span id='about-date'>&nbsp;&nbsp;May, 2015 - Sept, 2015</span></h4></li>
+<b>CTO</b> of GYMGAGE startup.
+<br/><br/>
+
+<li><h4>Korbit Inc<span id='about-date'>&nbsp;&nbsp; Jul, 2014 - Apr, 2015</span></h4></li>
+<b>A Software Developer</b> of Korbit Inc that started by offering the world's first Bitcoin-Korean Won exchange.
+
+1st project. Developing Test Automation Script for Korbit Bitcoin-API <br/>
+I developed test automation script for Korbit Bitcoin-API using CasperJS based on Javascript. <br/>
+
+2nd project. Developing iOS platform SDK for Aire App <br/>
+I developed Objective-c and Swift SDK for Aire App. Aire app is an easy way to send money to your friends around the world. <br/>
+You can use digital currencies such as Bitcoin to reduce the costs. <br/>
+
+3rd project. Developing Bitcoin-Korean Won exchange v2.0 API <br/>
+I developed server APIs for Bitcoin-Korean Won exchange v2.0 using some skills such as Scala, Play Framework, Slick, etc.. <br/>
+
+4th project. Developing back-end & front-end for BitWire <br/>
+I developed back-end & front-end for BitWire. BitWire is an application that the easiest way to send money to anyone in South Korea. <br/>
+I used some skills such as node.js, express.js, bootstrap, etc.. <br/>
+URL: https://www.bitwire.co/ <br/>
+
+If you want to get more information about Korbit Inc.. <br/>
+URL: https://www.korbit.co.kr/
+<br/><br/>
+
+<li><h4>Formal Methods Lab in Korea Univ.<span id='about-date'>&nbsp;&nbsp; Aug, 2013 - Feb, 2015</span></h4></li>
+<b>A Researcher</b> of Formal Methods Lab in Korea University.
+
+1st project. Participating in the Research Center of High-Quality Convergence Software. <br/>
+I did static analysis about open source of OpenADR that is the protocol for Smart Grid using LDRA, PolySpace, etc.. <br/>
+I have a plan to do Modeling & Simulation of OpenADR protocol using UPPAAL. <br/>
+
+2nd project. Researching the improvement for Master Control and Reporting Center of Airforce. <br/>
+
+If you want to get more information about Formal Methods Lab .. <br/>
+URL: http://formal.korea.ac.kr/
+<br/><br/>
+
+<li><h4>LG CNS<span id='about-date'>&nbsp;&nbsp; Jan, 2011 - Jan, 2013</span></h4></li>
+<b>A Programming Analyst</b> of KIPOnet Application Team.
+
+Before participating the project, I got the top score on the programming training (VCC1). <br/>
+
+1st project. Developing Registration System for Patent Agent <br/>
+I developed the system for the public using some skills such as javascript, jQuery, html, Java, Spring framework, etc.. <br/>
+URL: http://www.kpaa.or.kr/ <br/>
+
+2nd project: Developing 3rd generation KIPOnet system. <br/>
+I developed KIPOnet system for the public using some skills such as javascript, jQuery, html, Java, Spring framework, etc.. <br/>
+URL: http://www.patent.go.kr/ <br/>
+
+If you want to get more information about LG CNS.. <br/>
+URL: http://www.lgcns.co.kr/
+<br/><br/>
+
+<li><h4>ETRI<span id='about-date'>&nbsp;&nbsp; Aug, 2010 - Nov, 2010</span></h4></li>
+<b>A Research Student</b> of CPS(Cyber-Physical Systems) team.
+I participated in DSU(Dynamic Software Update) system and submitted the paper "Dynamic Software Updates in Cyber-Physical Systems" <br/>
+
+If you want to get more information about ETRI.. <br/>
+URL: http://www.etri.re.kr/etri/main/index.etri
+<br/><br/>
+
+<!-- Experience -->
+<h2><b>Experience</b></h2>
+
+<li><h4>Girls in Tech, South Korea<span id='about-date'>&nbsp;&nbsp; Nov, 2014 - present</span></h4></li>
+<b>IT Director</b> of Girls in Tech, South Korea.
+
+Girls in Tech (GIT) is a global non-profit focused on the engagement, education and empowerment of influential women in technology and entrepreneurship. We focus on the promotion, growth and success of entrepreneurial and innovative women in the technology space.
+
+If you want to get more information about Girls in Tech ...<br/>
+URL 1: http://www.girlsintech.org/<br/>
+URL 2: http://blog.naver.com/git_korea<br/>
+URL 3: https://www.facebook.com/GITKorea2014
+<br/><br/>
+
+<li><h4>Software Maestro<span id='about-date'>&nbsp;&nbsp; Jul, 2013 - Jun, 2014</span></h4></li>
+<b>A 4th Mentee</b> of Software Maestro Program.
+
+1st project. I developed the improvement system of Demand Response in Smart Grid. <br/>
+It replaces the smart meter. This system performs all functions of the smart meter with minimum cost. <br/>
+I used the devices such as Arduino Uno, IR sensor, Raspberry Pi, Camera Module, and Routher and some skills such as Java, JSP, C, etc. <br/>
+
+2nd project. I developed Social Printer. <br/>
+It is also IoT system. <br/>
+I used the devices such as Arduino Uno, Raspberry Pi, and Thermal Printer and some skills such as Java, JSP, Sprint Framework, GlassFish, C, etc. <br/>
+
+If you want to get more information about Software Maestro .. <br/>
+URL: http://swmaestro.kr/main.do
+<br/><br/>
+
+<li><h4>IT Frontier, SK C&C<span id='about-date'>&nbsp;&nbsp; May, 2010 - Jun, 2010</span></h4></li>
+<b>SK C&C IT Frontier 1st.</b> <br/>
+It is IT education program such as Java, Servlet, JSP, etc. for undergraduates. <br/>
+I got the top score on this program. <br/>
+
+If you want to get more information about SK C&C .. <br/>
+URL: http://blog.skcc.com/
+<br/><br/><br/><br/><br/>
+
+
+<!-- Tags -->
+<h5>Tagged: 
+{% for tag in page.tags %}
+    {{ tag }} ,
+{% endfor %}
+</h5>

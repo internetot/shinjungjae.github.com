@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 1.7 - Tail Recursion"
+date:   2016-04-10 23:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/007
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/33" target="_blank">Lecture 1.7 - Tail Recursion</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Tail Calls</h4>
+	- if the last action of a function consists of calling a function (which may be the same), one stack frame would be sufficient for both functions <br/><br/>
+
+{% highlight text %}
+gcd(14, 21)
+→ if (21 == 0) 14 else gcd(21, 14 % 21)
+→ if (false) 14 else gcd(21, 14 % 21)
+→ gcd(21, 14 % 21)
+→ gcd(21, 14)
+→ if (14 == 0) 21 else gcd(14, 21 % 14)
+→→ gcd(14, 7)
+→→ gcd(7, 0)
+→ if (0 == 0) 7 else gcd(0, 7 % 0)
+→ 7
+{% endhighlight %}
+<br/><br/>
+
+- <h4>Tail Recursion</h4>
+	- If a function calls itself as its last action, the function’s stack frame can be reused <br/><br/>
+
+{% highlight text %}
+factorial(4)
+→ if (4 == 0) 1 else 4 * factorial(4 - 1)
+→→ 4 * factorial(3)
+→→ 4 * (3 * factorial(2))
+→→ 4 * (3 * (2 * factorial(1)))
+→→ 4 * (3 * (2 * (1 * factorial(0)))
+→→ 4 * (3 * (2 * (1 * 1)))
+→→ 120
+{% endhighlight %}
+<br/><br/>
+
+- <h4>Tail Recursion in Scala</h4>
+	- using a @tailrec annotation <br/>
+	- If the annotation is given, and the implementation of gcd were not tail recursive, an error would be issued <br/><br/>
+
+{% highlight text %}
+@tailrec
+def gcd(a: Int, b: Int): Int = ...
+{% endhighlight %}
+<br/><br/>
+
+

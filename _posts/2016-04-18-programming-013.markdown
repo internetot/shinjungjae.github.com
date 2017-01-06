@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 2.7 - Evaluation and Operators"
+date:   2016-04-18 22:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/013
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/49" target="_blank">Lecture 2.7 - Evaluation and Operators</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Classes and Substitutions</h4>
+	- the formal parameters of the class are x1, ..., xm <br/>
+	- the class defines a method f with formal parameters y1, ..., yn <br/>
+
+{% highlight text %}
+class C(x1, ..., xm){ ... def f(y1, ..., yn) = b ... }
+{% endhighlight %}
+<br/>
+
+- <h4>Example (evaluation)</h4>
+	- three substitutions <br/>
+		1) the formal parameters y1, ..., yn <—  the arguments w1, ..., wn <br/>
+		2) the formal parameters x1, ..., xm <— the class arguments v1, ..., vm <br/>
+		3) the self reference this <— the object new C(v1, ..., vn) <br/>
+
+{% highlight text %}
+new C(v1, ..., vm).f(w1, ..., wn)
+  —> w1/y1, ..., wn/yn][v1/x1, ..., vm/xm][new C(v1, ..., vm)/this] b
+{% endhighlight %}
+<br/>
+
+- <h4>Operators</h4>
+	- can eliminate the difference below <br/>
+	- step 1 : Infix Notation <br/>
+		- can be used like an infix operator <br/>
+	- step 2 : Relaxed Identifiers <br/>
+		- operators can be used as identifiers —> Alphanumeric, Symbolic <br/>
+
+{% highlight text %}
+write x + y, if x and y are integers
+write r.add(s) if r and s are rational numbers
+{% endhighlight %}
+<br/>
+
+- <h4>Operators for Rationals</h4>
+
+{% highlight text %}
+class Rational(x: Int, y: Int) {
+  private def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
+  private val g = gcd(x, y)
+  def numer : Int = x / g
+  def denom : Int = y / g
+  def + (r: Rational) : Rational =
+    new Rational(
+      numer * r.denom + r.numer * denom,
+      denom * r.denom)
+  def - (r: Rational) = ...
+  def * (r: Rational) = ...
+  ...
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Precedence Rules</h4>
+
+{% highlight text %}
+(all letters)
+|
+^
+&
+< >
+= !
+:
++ -
+* / %
+(all other special characters)
+{% endhighlight %}
+
+{% highlight text %}
+((a + b) ^? (c ?^ d)) less ((a ==> b) | c)
+{% endhighlight %}
+<br/>
+
+

@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "[Bitcoin/Blockchain] Bitcoin Address"
+date:   2016-03-04 23:00:00
+categories: project
+author: Rachel Park
+comments: true
+tags: [project]
+permalink: project/001
+---
+
+
+<h3>Bitcoin Address 예제</h3>
+<hr/>
+* 1AGNa15ZQXAZUgFiqJ2i7Z2DPU2J6hW62i
+<br/><br/><br/>
+
+<h3>Bitcoin Address 생성 방법</h3>
+<hr/>
+
+* 필요한 Algorithm: RIPEMD160, SHA256, Base58Check Encoding
+<br/><br/>
+
+<img style="margin-left:auto;margin-right:auto;" src="../../images/project/project-001-01.png" width="70%"/>
+<br/><br/>
+* 참고: Mastering Bitcoin (http://chimera.labs.oreilly.com/books/1234000001802/)
+<br/><br/><br/>
+
+* <b>Payload:</b> RIPEMD160(SHA256(public key))
+<br/><br/>
+
+* <b>Version:</b> 0x00 (Bitcoin Address 의미)
+<br/><br/>
+
+* <b>Checksum:</b> SHA256(SHA256(Version + Payload))
+<br/><br/><br/>
+
+<h3>Bitcoin Address Validation 방법</h3>
+<hr/>
+
+1) A = Base58Check Decode(Bitcoin Address) : 25 bytes
+
+2) B = SHA256(SHA(256, A(0, 21)), 0, 32) : 32 bytes
+
+3) B(0, 4) == A(21, 25) : 4 bytes (Checksum) 
+
+&nbsp; &nbsp; --> <b>true 이면 Bitcoin Address Validation 성공</b>
+
+
+
+

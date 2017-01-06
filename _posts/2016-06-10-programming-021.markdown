@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 4.5 - Decomposition"
+date:   2016-06-10 13:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/021
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/85" target="_blank">Lecture 4.5 - Decomposition</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Expressions</h4>
+
+{% highlight text %}
+trait Expr {
+  def isNumber: Boolean
+  def isSum: Boolean
+  def numValue: Int
+  def leftOp: Expr
+  def rightOp: Expr
+}
+
+class Number(n: Int) extends Expr {
+  def isNumber: Boolean = true
+  def isSum: Boolean = false
+  def numValue: Int = n
+  def leftOp: Expr = throw new Error("Number.leftOp")
+  def rightOp: Expr = throw new Error("Number.rightOp")
+}
+
+class Sum(e1: Expr, e2: Expr) extends Expr {
+  def isNumber: Boolean = false
+  def isSum: Boolean = true
+  def numValue: Int = throw new Error("Sum.numValue")
+  def leftOp: Expr = e1
+  def rightOp: Expr = e2
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Evaluation of Expressions</h4>
+  - Problem: Writing all these classification and accessor functions quickly becomes tedious <br/>
+
+{% highlight text %}
+def eval(e: Expr): Int = {
+  if (e.isNumber) e.numValue
+  else if (e.isSum) eval(e.leftOp) + eval(e.rightOp)
+  else throw new Error("Unknown expression " + e)
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Object-Oriented Decomposition</h4>
+
+{% highlight text %}
+trait Expr {
+  def eval: Int
+}
+
+class Number(n: Int) extends Expr {
+  def eval: Int = n
+}
+
+class Sum(e1: Expr, e2: Expr) extends Expr {
+  def eval: Int = e1.eval + e2.eval
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Limitations of OO Decomposition</h4>
+  - This is a non-local simplification. It cannot be encapsulated in the method of a single object <br/>
+  - In the next session, we will address these problems <br/>
+
+{% highlight text %}
+a * b + a * c -> a * (b + c)
+{% endhighlight %}
+<br/><br/>
+
+
+
+
+

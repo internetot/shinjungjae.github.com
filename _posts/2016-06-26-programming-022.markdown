@@ -1,0 +1,111 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 4.6 - Pattern Matching"
+date:   2016-06-26 07:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/022
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/87" target="_blank">Lecture 4.6 - Pattern Matching</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Case Classes</h4>
+  - definition is similar to a normal class definition, except that it is preceded by the modifier case
+
+{% highlight text %}
+trait Expr
+case class Number(n: Int) extends Expr
+case class Sum(e1: Expr, e2: Expr) extends Expr
+{% endhighlight %}
+<br/>
+
+- <h4>Pattern Matching</h4>
+  - a generalization of switch from C/Java to class hierarchies
+
+{% highlight text %}
+def eval(e: Expr): Int = e match {
+  case Number(n) => n
+  case Sum(e1, e2) => eval(e1) + eval(e2)
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Match Syntax</h4>
+  - match is followed by a sequence of cases, pat => expr <br/>
+  - each case associates an expression expr with a pattern pat <br/>
+  - a MatchError exception is thrown if no pattern matches the value of the selector <br/><br/>
+
+- <h4>Forms of Patterns</h4>
+  - variables always begin with a lowercase letter <br/>
+  - the same variable name can only appear once in a pattern. So, Sum(x, x) is not a legal pattern <br/>
+  - names of constants begin with a capital letter, with the exception of the reserved words null, true, false <br/>
+    - constructors, e.g. Number, Sum <br/>
+    - variables, e.g. n, e1, e2 <br/>
+    - wildcard patterns _ <br/>
+    - constants, e.g. 1, true <br/><br/>
+
+- <h4>Evaluating Match Expressions</h4>
+  - an expression of the form matches the value of the selector e with the patterns p1, ..., pn in the order in which they are written <br/>
+  - the whole match expression is rewritten to the right-hand side of the first case where the pattern matches the selector e <br/>
+  - references to pattern variables are replaced by the corresponding parts in the selector
+
+{% highlight text %}
+e match { case p1 => e1 ... case pn => en }
+{% endhighlight %}
+<br/>
+
+- <h4>What Do Patterns Match?</h4>
+  - a constructor pattern C(p1, ..., pn) matches all the values of type C (or a subtype) that have been constructed with arguments matching the patterns p1, ..., pn <br/>
+  - a variable pattern x matches any value, and binds the name of the variable to this value <br/>
+  - a constant pattern c matches values that are equal to c (in the sense of ==) <br/><br/>
+
+- <h4>Example</h4>
+
+{% highlight text %}
+eval(Sum(Number(1), Number(2)))
+
+→
+
+Sum(Number(1), Number(2)) match {
+  case Number(n) => n
+  case Sum(e1, e2) => eval(e1) + eval(e2)
+}
+
+→
+
+eval(Number(1)) + eval(Number(2))
+
+→
+
+Number(1) match {
+  case Number(n) => n
+  case Sum(e1, e2) => eval(e1) + eval(e2)
+} + eval(Number(2))
+
+→
+
+1 + eval(Number(2))
+
+→→
+
+3
+{% endhighlight %}
+<br/>
+
+
+
+
+

@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 3.3 - Polymorphism"
+date:   2016-05-25 23:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/016
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/75" target="_blank">Lecture 3.3 - Polymorphism</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Cons-Lists</h4>
+	- It is constructed from two building blocks <br/>
+    - Nil : the empty list <br/>
+    - Cons : a cell containing an element and the remainder of the list <br/><br/>
+
+- <h4>Cons-Lists with Value Parameters</h4>
+
+{% highlight text %}
+trait IntList ...
+class Cons(val head: Int, val tail: IntList) extends IntList ...
+class Nil extends IntList ...
+{% endhighlight %}
+<br/>
+
+- <h4>Cons-Lists with Type Parameters</h4>
+  - We can generalize the definition <br/>
+
+{% highlight text %}
+trait List[T] {
+  def isEmpty: Boolean
+  def head: T
+  def tail: List[T]
+}
+
+class Cons[T](val head: T, val tail: List[T]) extends List[T] {
+  def isEmpty = false
+}
+
+class Nil[T] extends List[T] {
+  def isEmpty = true
+  def head = throw new NoSuchElementException("Nil.head")
+  def tail = throw new NoSuchElementException("Nil.tail")
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Generic Functions</h4>
+
+{% highlight text %}
+def singleton[T](elem: T) = new Cons[T](elem, new Nil[T])
+
+singleton[Int](1)
+singleton[Boolean](true)
+{% endhighlight %}
+<br/>
+
+- <h4>Generic Functions with Type Inference</h4>
+  - Scala compiler can deduce the correct type parameters from the value arguments <br/>
+
+{% highlight text %}
+singleton(1)
+singleton(true)
+{% endhighlight %}
+<br/>
+
+- <h4>Polymorphism</h4>
+  - subtyping : instances of a subclass can be passed to a base class <br/>
+  - generics : instances of a function or class are created by type parameterization <br/>
+
+
+
+
+

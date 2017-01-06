@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 3.1 - Class Hierarchies"
+date:   2016-04-21 18:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/014
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/51" target="_blank">Lecture 3.1 - Class Hierarchies</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Abstract Classes</h4>
+	- can contain members which are missing an implementation <br/>
+	- can not be created with the operator new <br/>
+
+{% highlight text %}
+abstract class IntSet {
+  def incl(x: Int): IntSet
+  def contains(x: Int): Boolean
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Class Extensions</h4>
+	- <b>IntSet</b> is called the superclass of Empty and NonEmpty <br/>
+  - <b>Empty</b> and <b>NonEmpty</b> are subclasses of <b>IntSet</b> <br/>
+  - base classes of <b>NonEmpty</b> are <b>IntSet</b> and <b>Object</b> (the direct or indirect superclasses) <br/>
+
+{% highlight text %}
+class Empty extends IntSet {
+  def contains(x: Int): Boolean = false
+  def incl(x: Int): IntSet = new NonEmpty(x, new Empty, new Empty)
+}
+
+class NonEmpty(elem: Int, left: IntSet, right: IntSet) extends IntSet {
+  def contains(x: Int): Boolean =
+    if (x < elem) left contains x
+    else if (x > elem) right contains x
+    else true
+
+  def incl(x: Int): IntSet =
+    if (x < elem) new NonEmpty(elem, left incl x, right)
+    else if (x > elem) new NonEmpty(elem, left, right incl x)
+    else this
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Implementation and Overriding</h4>
+	- Implementation : implement the abstract functions (missing an implementation) <br/>
+	- Overriding : redefine an existing definition (including an implementation) <br/><br/>
+
+- <h4>Object Definitions</h4>
+  - a singleton object <br/><br/>
+
+- <h4>Programs</h4>
+  - contain an object with a main method <br/><br/>
+
+- <h4>Dynamic Binding</h4>
+  - mean that the code invoked by a method call depends on the runtime type of the object that contains the method <br/>
+
+<br/><br/>
+
+

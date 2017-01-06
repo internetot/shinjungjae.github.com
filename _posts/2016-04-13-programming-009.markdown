@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 2.2 - Currying"
+date:   2016-04-13 23:10:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/009
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/37" target="_blank">Lecture 2.2 - Currying</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Currying</h4>
+	- transforming a function that takes multiple arguments into a function that takes a single argument <br/>
+	- a definition of a function with multiple parameter lists <br/>
+
+{% highlight text %}
+def f(args1)...(argsn) = E
+def f(args1)...(argsn−1) = {def g(argsn) = E; g}
+def f(args1)...(argsn−1) = (argsn ⇒ E)
+def f = (args1 ⇒ (args2 ⇒ ...(argsn ⇒ E)...))
+{% endhighlight %}
+<br/>
+
+- <h4>Motivation</h4>
+	- the summation functions <br/>
+	- a and b get passed unchanged from sumInts and sumCubes into sum <br/>
+	- Can we be even shorter by getting rid of these parameter? <br/>
+
+{% highlight text %}
+def sumInts(a: Int, b: Int) = sum(x => x, a, b)
+def sumCubes(a: Int, b: Int) = sum(x => x * x * x, a, b)
+def sumFactorials(a: Int, b: Int) = sum(fact, a, b)
+{% endhighlight %}
+<br/>
+
+- <h4>Multiple Parameter Lists</h4>
+
+{% highlight text %}
+def sum(f: Int => Int)(a: Int, b: Int): Int =
+if (a > b) 0 else f(a) + sum(f)(a + 1, b)
+{% endhighlight %}
+
+{% highlight text %}
+sum(cube)(1, 10) 
+{% endhighlight %}
+<br/>
+
+<h3>Additional Resources</h3>
+<hr/>
+
+* Code Commit - Function Currying in Scala <br/>
+    <a href="http://www.codecommit.com/blog/scala/function-currying-in-scala" target="_blank">http://www.codecommit.com/blog/scala/function-currying-in-scala</a> <br/>
+
+<br/><br/>
+
+

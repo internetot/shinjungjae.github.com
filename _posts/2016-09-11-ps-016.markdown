@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "[ACM-ICPC] 10799 - 쇠막대기"
+date:   2016-09-11 12:30:00
+categories: algorithm
+author: Rachel Park
+comments: true
+tags: [ps]
+permalink: ps/016
+---
+
+
+<a href='https://www.acmicpc.net/problem/10799' target='_blank'>LINK: 10799 - 쇠막대기</a>
+<br/><br/>
+
+
+<a href='https://github.com/mjpark03/acmicpc/blob/master/src/IronStick.java'>My Solution (Github)</a>
+{% highlight text %}
+import java.util.Scanner;
+import java.util.Stack;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+ 
+        Scanner scan = new Scanner(System.in);
+        String input = scan.nextLine();
+ 
+        int count = 0;
+        Stack<Character> stack = new Stack<Character>();
+ 
+        for(int i=0; i<input.length(); i++) {
+            char bracket = input.charAt(i);
+ 
+            if(bracket == ')') {
+                stack.pop();
+ 
+                if(input.charAt(i-1) == '(') {
+                    count += stack.size();
+                } else {
+                    count += 1;
+                }
+ 
+            } else {
+                stack.push(bracket);
+            }
+        }
+ 
+        System.out.println("" + count);
+    }
+}
+{% endhighlight %}
+
+<!-- more -->
+
+<br/><br/>
+
+

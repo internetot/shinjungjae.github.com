@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 4.2 - Subtyping and Generics"
+date:   2016-05-29 22:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/018
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/81" target="_blank">Lecture 4.2 - Subtyping and Generics</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Type Bounds</h4>
+  - S <: T means: S is a subtype of T <br/>
+  - S >: T means: S is a supertype of T, or T is a subtype of S <br/>
+
+{% highlight text %}
+/* non-use type bounds */
+def assertAllPos(s: IntSet): IntSet
+
+/* use type bounds */
+def assertAllPos[S <: IntSet](r: S): S = ...
+{% endhighlight %}
+<br/>
+
+- <h4>Upper Bounds</h4>
+
+{% highlight text %}
+[S <: IntSet]
+{% endhighlight %}
+<br/>
+
+- <h4>Lower Bounds</h4>
+
+{% highlight text %}
+[S >: NonEmpty]
+{% endhighlight %}
+<br/>
+
+- <h4>Mixed Bounds</h4>
+
+{% highlight text %}
+[S >: NonEmpty <: IntSet]
+{% endhighlight %}
+<br/>
+
+- <h4>Covariance Exercise</h4>
+
+{% highlight text %}
+val a: Array[NonEmpty] = Array(new NonEmpty(1, Empty, Empty))
+val b: Array[IntSet] = a // A type error
+b(0) = Empty
+val s: NonEmpty = a(0)
+{% endhighlight %}
+<br/><br/>
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 1.4 - Conditionals and Value Definitions"
+date:   2016-04-07 23:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/005
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/5" target="_blank">Lecture 1.4 - Conditionals and Value Definitions</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Rewrite rules for Booleans</h4>
+	- short-circuit evaluation <br/>
+
+{% highlight text %}
+!true --> false
+!false --> true
+true && e --> e
+false && e --> false
+true || e --> true
+false || e --> e
+{% endhighlight %}
+<br/>
+
+- <h4>Value Definitions</h4>
+	- def definitions <br/>
+		1) by name <br/>
+		2) its right hand side is evaluated on each use <br/><br/>
+	- val definitions <br/>
+		1) by value <br/>
+		2) its right hand side is evaluated at the point of the definition itself <br/><br/>
+	- example <br/>
+{% highlight text %}
+def loop: Boolean = loop
+def x = loop (OK)
+val x = loop (infinite loop)
+{% endhighlight %}
+<br/>
+
+<h3>Additional Resources</h3>
+<hr/>
+
+* scala-user Google Groups - difference between val and def <br/>
+    <a href="https://groups.google.com/forum/#!topic/scala-user/E9WPDX2eMKk" target="_blank">https://groups.google.com/forum/#!topic/scala-user/E9WPDX2eMKk</a> <br/>
+
+<br/><br/>
+

@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "[LeetCode] Coin Change (1)"
+date:   2016-08-23 23:00:00
+categories: algorithm
+author: Rachel Park
+comments: true
+tags: [ps]
+permalink: ps/012
+---
+
+
+<a href='https://leetcode.com/problems/coin-change/'>Coin Change</a>
+<br/><br/>
+
+You are given coins of different denominations and a total amount of money amount. 
+
+Write a function to compute the fewest number of coins that you need to make up that amount. 
+
+If that amount of money cannot be made up by any combination of the coins, return -1.
+
+
+
+<a href='https://github.com/mjpark03/leetcode/blob/master/coin-change-1.java'>My Solution (Github)</a>
+{% highlight text %}
+public class Solution {
+    
+    public int coinChange(int[] coins, int amount) {
+        if(amount == 0) return 0;
+        
+        int[] amountArr = new int[amount+1];
+        for(int i=1; i<amountArr.length; i++) {
+            amountArr[i] = -1;
+        }
+        
+        for(int i=1; i<amountArr.length; i++) {
+            for(int j=0; j<coins.length; j++) {
+                
+                if(coins[j] <= i) {
+                    int prevAmount = amountArr[i-coins[j]];
+                    
+                    if(prevAmount != -1 && (amountArr[i] == -1 || prevAmount+1 < amountArr[i])) {
+                        amountArr[i] = prevAmount + 1;
+                    }
+                }
+            }
+        }
+        
+        return amountArr[amount];
+    }
+}
+{% endhighlight %}
+
+<!-- more -->
+
+<br/><br/>
+* Time Complexity: O(m*n)

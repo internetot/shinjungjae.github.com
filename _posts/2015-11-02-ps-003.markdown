@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "[LeetCode] Palindrome Number (1)"
+date:   2015-11-02 22:27:00
+categories: algorithm
+author: Rachel Park
+comments: true
+tags: [ps]
+permalink: ps/003
+---
+
+
+<a href='https://leetcode.com/problems/palindrome-number/'>Palindrome Number</a>
+<br/><br/>
+
+Determine whether an integer is a palindrome. Do this without extra space.
+<br/><br/>
+
+<a href='https://github.com/mjpark03/leetcode/blob/master/palindrome-number.java'>My Solution (Github)</a>
+{% highlight text %}
+public class Solution {
+
+    public boolean isPalindrome(int x) {
+
+        String[] splitX = Integer.toString(x).split(" ");
+        StringBuffer s = new StringBuffer();
+        
+        if(splitX.length > 1) {
+            for(int i=0; i<splitX.length; i++) {
+                s.append(splitX[i]);
+            }
+        } else {
+            s.append(splitX[0]);
+        }
+        
+        StringBuffer reverseS = new StringBuffer(s.toString());
+        reverseS.reverse();
+        
+        return s.toString().equals(reverseS.toString());
+        
+    }
+}
+{% endhighlight %}
+
+<!-- more -->
+

@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "[LeetCode] Two Sum (1)"
+date:   2016-01-27 21:57:00
+categories: algorithm
+author: Rachel Park
+comments: true
+tags: [ps]
+permalink: ps/006
+---
+
+
+<a href='https://leetcode.com/problems/remove-duplicates-from-sorted-list/'>Two Sum</a>
+<br/><br/>
+
+Given an array of integers, find two numbers such that they add up to a specific target number.
+
+The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.
+
+You may assume that each input would have exactly one solution.
+
+<br/>
+Input: numbers={2, 7, 11, 15}, target=9 
+<br/>
+Output: index1=1, index2=2
+
+
+
+<a href='https://github.com/mjpark03/leetcode/blob/master/two-sum.java'>My Solution (Github)</a>
+{% highlight text %}
+public class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        
+        int[] result = {0,0};
+        int remain;
+        int current;
+        
+        for (int i=0; i<nums.length; i++) {
+            
+            current = nums[i];
+            result[0] = i+1;
+            remain = target - current;
+            
+            for (int j=i+1; j<nums.length; j++) {
+                if (remain == nums[j]) {
+                    result[1] = j+1;
+                    return result;
+                 }
+            }
+        
+            result[0] = 0;
+        }
+        
+        return result;
+    }
+}
+{% endhighlight %}
+
+<!-- more -->
+
+<br/><br/>
+* Time Complexity: O(n*n)
+

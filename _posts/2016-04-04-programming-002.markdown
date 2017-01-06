@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 1.1 - Programming Paradigms"
+date:   2016-04-04 22:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/002
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/8" target="_blank">Lecture 1.1 - Programming Paradigms</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Functional Programming</h4>
+    - In the restricted sense <br/>
+    	1) without mutable variables <br/>
+    	2) without assignments to variables <br/>
+    	3) without loops and the other imperative control structures <br/><br/>
+    - In the more general sense <br/>
+    	1) focusing on the functions in the program <br/><br/>
+
+- <h4>Some functional programming languages</h4>
+    - In the restricted sense <br/>
+        - Pure Lisp, XSLT, XPath, XQuery, FP <br/>
+        - Haskell (without I.O Monad or UnsafePerformIO) <br/><br/>
+    - In the wider sense <br/>
+        - Lisp, Scheme, Racket, Clojure <br/>
+        - SML, Ocaml, F# <br/>
+        - Haskell (full language) <br/>
+        - Scala <br/>
+        - Smalltalk, Ruby (first class function) <br/><br/>
+
+- <h4>Why Functional Programming ?</h4>
+    - Simpler reasoning principles <br/>
+    - Better modularity <br/>
+    - Good for exploiting parallelism on multi call and cloud computing <br/><br/>
+
+<h3>Additional Resources</h3>
+<hr/>
+
+* Martin’s talk at OSCON 2011: Working Hard to Keep it Simple <br/>
+	1) <a href="http://www.slideshare.net/Odersky/oscon-keynote-working-hard-to-keep-it-simple" target="_blank">Slide</a> <br/>
+	2) <a href="https://www.youtube.com/watch?v=3jg1AheF4n0" target="_blank">Video</a>
+
+<br/><br/>
+

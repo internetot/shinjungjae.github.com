@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 4.1 - Functions as Objects"
+date:   2016-05-27 19:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/017
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/79" target="_blank">Lecture 4.1 - Functions as Objects</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Functions as Objects</h4>
+  - function values are treated as objects in Scala <br/>
+  - The function type A => B : scala.Function1[A, B] <br/>
+
+{% highlight text %}
+package scala
+
+trait Function1[A, B] {
+  def apply(x: A): B
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Expansion of Function Values</h4>
+  - (x: Int) => x * x is expanded to <br/>
+
+{% highlight text %}
+{ class AnonFun extends Function1[Int, Int] {
+    def apply(x: Int) = x * x
+  }
+  new AnonFun
+}
+{% endhighlight %}
+
+{% highlight text %}
+new Function1[Int, Int] {
+  def apply(x: Int) = x * x
+}
+{% endhighlight %}
+<br/><br/>
+
+

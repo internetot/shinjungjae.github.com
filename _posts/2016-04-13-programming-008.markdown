@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 2.1 - Higher-Order Functions"
+date:   2016-04-13 23:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/008
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/35" target="_blank">Lecture 2.1 - Higher-Order Functions</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Higher-Order Functions</h4>
+	- treat functions as first-class values <br/>
+	- can be passed as a parameter and returned as a result <br/><br/>
+
+- <h4>Example (Summing with Higher-Order Functions)</h4>
+
+{% highlight text %}
+def sum(f: Int => Int, a: Int, b: Int): Int =
+if (a > b) 0
+else f(a) + sum(f, a + 1, b)
+{% endhighlight %}
+
+{% highlight text %}
+def sumInts(a: Int, b: Int) = sum(id, a, b)
+def sumCubes(a: Int, b: Int) = sum(cube, a, b)
+def sumFactorials(a: Int, b: Int) = sum(fact, a, b)
+{% endhighlight %}
+
+{% highlight text %}
+def id(x: Int): Int = x
+def cube(x: Int): Int = x * x * x
+def fact(x: Int): Int = if (x == 0) 1 else fact(x - 1)
+{% endhighlight %}
+<br/>
+
+- <h4>Anonymous Function</h4>
+	- (x: Int) is the parameter <br/>
+	- x * x * x is the body <br/>
+
+{% highlight text %}
+(x: Int) => x * x * x
+{% endhighlight %}
+<br/>
+
+- <h4>Example (Summation with Anonymous Functions)</h4>
+
+{% highlight text %}
+def sumInts(a: Int, b: Int) = sum(x => x, a, b)
+def sumCubes(a: Int, b: Int) = sum(x => x * x * x, a, b)
+{% endhighlight %}
+<br/><br/>
+
+

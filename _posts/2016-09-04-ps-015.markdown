@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "[LeetCode] Contains Duplicate II"
+date:   2016-09-04 07:00:00
+categories: algorithm
+author: Rachel Park
+comments: true
+tags: [ps]
+permalink: ps/015
+---
+
+
+<a href='https://leetcode.com/problems/contains-duplicate-ii/'>Contains Duplicate II</a>
+<br/><br/>
+
+Given an array of integers and an integer k, 
+
+find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and the difference between i and j is at most k.
+
+
+
+<a href='https://github.com/mjpark03/leetcode/blob/master/contains-duplicate-2.java'>My Solution (Github)</a>
+{% highlight text %}
+public class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        
+        for(int i=0; i<nums.length; i++) {
+            int key = nums[i];
+            
+            if(map.containsKey(key)) {
+                int index = map.get(key);
+                if(i-index <= k) return true;
+            } 
+                
+            map.put(key, i);
+        }
+        
+        return false;
+    }
+}
+{% endhighlight %}
+
+<!-- more -->
+
+<br/><br/>

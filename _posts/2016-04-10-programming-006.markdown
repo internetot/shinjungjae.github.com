@@ -1,0 +1,64 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 1.6 - Blocks and Lexical Scope"
+date:   2016-04-10 23:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/006
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/7" target="_blank">Lecture 1.6 - Blocks and Lexical Scope</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Nested functions</h4>
+	- good functional programming style to split up a task into many small functions <br/>
+	- but, should avoid "name-space pollution" <br/><br/>
+
+- <h4>Blocks in Scala</h4>
+	- It contains a sequence of definitions or expressions <br/>
+	- The last element of a block is an expression that defines its value <br/>
+	- The definitions inside a block are only visible from within the block <br/>
+	- The definitions inside a block shadow definitions of the same names outside the block <br/><br/>
+
+{% highlight text %}
+val x = 0
+def f(y: Int) = y + 1
+  val result = {
+  val x = f(3)
+  x * x
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Lexical Scoping</h4>
+	- Definitions of outer blocks are visible inside a block unless they are shadowed <br/><br/>
+
+- <h4>Semicolons</h4>
+	- In Scala, semicolons at the end of lines are in most cases optional <br/>
+	- One issue with Scala’s semicolon convention is how to write expressions that span several lines <br/>
+	- 1st solution : write the multi-line expression in parentheses <br/>
+	- 2nd solution : write the operator on the first line <br/>
+
+{% highlight text %}
+(someLongExpression
++ someOtherExpression)
+{% endhighlight %}
+
+{% highlight text %}
+someLongExpression +
+someOtherExpression
+{% endhighlight %}
+<br/><br/>
+

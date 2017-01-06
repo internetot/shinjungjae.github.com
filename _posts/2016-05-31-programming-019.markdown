@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 4.3 - Objects Everywhere"
+date:   2016-05-31 23:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/019
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/77" target="_blank">Lecture 4.3 - Objects Everywhere</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Pure Object Orientation</h4>
+  - every value is an object <br/><br/>
+
+- <h4>Standard Classes</h4>
+  - types do not receive special treatment in Scala <br/><br/>
+
+- <h4>Pure Booleans</h4>
+
+{% highlight text %}
+package idealized.scala
+
+abstract class Boolean {
+  def ifThenElse[T](t: => T, e: => T): T
+  def && (x: => Boolean): Boolean = ifThenElse(x, false)
+  def || (x: => Boolean): Boolean = ifThenElse(true, x)
+  def unary_!: Boolean = ifThenElse(false, true)
+  def == (x: Boolean): Boolean = ifThenElse(x, x.unary_!)
+  def != (x: Boolean): Boolean = ifThenElse(x.unary_!, x)
+  ...
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Boolan Constants</h4>
+
+{% highlight text %}
+package idealized.scala
+
+object true extends Boolean {
+  def ifThenElse[T](t: => T, e: => T) = t
+}
+
+object false extends Boolean {
+  def ifThenElse[T](t: => T, e: => T) = e
+}
+{% endhighlight %}
+<br/>
+
+- <h4>The class Int</h4>
+
+{% highlight text %}
+class Int {
+  def + (that: Double): Double
+  def + (that: Float): Float
+  def + (that: Long): Long
+  def + (that: Int): Int         // same for -, *, /, %
+  def << (cnt: Int): Int         // same for >>, >>> */
+  def & (that: Long): Long
+  def & (that: Int): Int         // same for |, ^ */
+  def == (that: Double): Boolean
+  def == (that: Float): Boolean
+  def == (that: Long): Boolean   // same for !=, <, >, <=, >=
+  ...
+}
+{% endhighlight %}
+<br/><br/>
+
+
+
+
+
+

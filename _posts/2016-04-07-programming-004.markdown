@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 1.3 - Evaluation Strategies and Termination"
+date:   2016-04-07 22:00:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/004
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/4" target="_blank">Lecture 1.3 - Evaluation Strategies and Termination</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Scala’s evaluation strategy</h4>
+    - Scala normally uses call-by-value <br/>
+        1) more efficient than call by name (it avoids this repeated recomputation of argument expressions that call by name entails) <br/><br/>
+    - Scala can use call-by-name <br/>
+        1) if the type of a function parameter starts with => it uses call-by-name <br/><br/>
+
+<h3>Additional Resources</h3>
+<hr/>
+
+* Stack Overflow - Call by name vs call by value in Scala, clarification needed <br/>
+    <a href="http://stackoverflow.com/questions/13337338/call-by-name-vs-call-by-value-in-scala-clarification-needed" target="_blank">http://stackoverflow.com/questions/13337338/call-by-name-vs-call-by-value-in-scala-clarification-needed</a> <br/>
+* Programming in Scala - 9.5 By-name parameters <br/>
+
+<br/><br/>
+

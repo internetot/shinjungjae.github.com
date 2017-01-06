@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "[Scala] Coursera - Lecture 2.5 - Functions and Data"
+date:   2016-04-14 15:10:00
+categories: programming
+author: Rachel Park
+comments: true
+tags: [programming]
+permalink: programming/011
+---
+
+
+I will summerize the lectures (Functional Programming Principles in Scala of Coursera) to study Scala.
+
+
+* The full video lectures : <a href="https://class.coursera.org/progfun-005/lecture" target="_blank">https://class.coursera.org/progfun-005/lecture</a>
+
+
+* The lecture of this posting : <a href="https://class.coursera.org/progfun-005/lecture/43" target="_blank">Lecture 2.5 - Functions and Data</a>
+<br/><br/>
+
+<h3>Summary</h3>
+<hr/>
+
+- <h4>Rational Addition</h4>
+	- if we want to implement the addition of two rational numbers —> it would be difficult to manage all these numerators and denominators <br/>
+
+{% highlight text %}
+def addRationalNumerator(n1: Int, d1: Int, n2: Int, d2: Int): Int
+def addRationalDenominator(n1: Int, d1: Int, n2: Int, d2: Int): Int
+{% endhighlight %}
+<br/>
+
+- <h4>Rational Addition (Classes)</h4>
+	- A better choice is to combine the numerator and denominator of a rational number in a data structure <br/>
+	- A new type, named Rational <br/>
+	- A constructor Rational to create elements of this type <br/>
+
+{% highlight text %}
+class Rational(x: Int, y: Int) {
+  def numer = x
+  def denom = y
+}
+{% endhighlight %}
+<br/>
+
+- <h4>Objects</h4>
+	- The elements of a class type objects <br/>
+
+{% highlight text %}
+new Rational(1, 2)
+{% endhighlight %}
+<br/>
+
+- <h4>Members of an Object</h4>
+	- Two members of the class Rational, numer and denom <br/>
+
+{% highlight text %}
+val x = new Rational(1, 2) > x: Rational = Rational@2abe0e27
+x.numer > 1
+x.denom > 2
+{% endhighlight %}
+<br/>
+
+- <h4>Methods</h4>
+	- Functions operating on a data abstraction in the data abstraction itself <br/>
+
+<br/><br/>
+
+

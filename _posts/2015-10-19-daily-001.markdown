@@ -1,0 +1,45 @@
+---
+layout: page
+title:  "Txxx Tech Interview"
+date:   2015-10-19 20:35:00
+categories: daily
+author: Rachel Park
+comments: true
+tags: [secret]
+permalink: daily/001
+---
+
+
+<h4><b>1. 손코딩 3문제</b></h4>
+
+* enum, ArrayList, foreach를 이용한 구현 문제
+* 예외 처리 관련 결과 예상 문제
+* Template Pattern으로 특정 아이템에 대한 클래스 설계 구현 문제
+<br/><br/>
+
+<h4><b>2. Tech Interview</b></h4>
+
+Q. 수행했던 Project에서 담당했던 개발 각각 질문<br/><br/>
+
+Q. 특정 서비스를 위한, 시스템 구성 설계 (화이트보드 이용)<br/>
+A. REST API Server, Redis, RDBMS, HTTPS를 이용하여 시스템 구성 후 설명<br/><br/>
+
+Q. Play! Framework 설명<br/>
+A. REST API Server 구현을 위해 최적화된 Framework, View 개발 관점에서 개발 생산성 낮음 등<br/><br/>
+
+Q. Objective-C, Swift<br/>
+A. (해당 언어로, Production 개발 경험 이야기)<br/><br/>
+
+Q. Spring Framework 설명<br/>
+A. AOP, IoC(DI) 관점에서 설명<br/><br/>
+
+Q. JVM Memory 구조 기반으로 실행파일 로딩관련 질문<br/><br/>
+
+Q. 기본적인 이론 질문 (Process, Thread, Static 등)<br/><br/>
+
+Q. 사용했던 디자인 패턴 설명<br/><br/>
+
+Q. 번역한 기술 서적에 대한 질문<br/><br/>
+
+(Update 중..)
+ 
